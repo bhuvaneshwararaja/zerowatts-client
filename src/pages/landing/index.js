@@ -2,7 +2,12 @@ import {Link} from "react-router-dom";
 import {useState} from "react";
 
 const LandingPage = () => {
-    const [changeSign,setChangesign] = useState(false);
+    const [changeSign,setChangesign] = useState(true);
+    
+    const [login,setLogin] = useState(true);
+    const [signup,setSignup] = useState(false);
+    
+    
     return <>
     <div>
         <img src="/images/cbackground.jpg" className="fixed h-full w-full" alt=""></img>
@@ -10,7 +15,8 @@ const LandingPage = () => {
        <div className="relative" style={{background:"rgba(0,0,0,.9"}}>
        <header className="flex flex-row justify-between p-4 text-2xl text-white">
             <Link to="">{"</ZeroWatts>"}</Link>
-            <button onClick={() => {
+            <button onClick={(e) => {
+                e.preventDefault();
                 setChangesign(false);
             }} className="font-thin border-2 border-purple-700 text-white rounded-lg pl-3 pr-3 transition-all duration-700 hover:bg-purple-700 hover:text-white ">Signin</button>
         </header>
@@ -24,24 +30,57 @@ const LandingPage = () => {
                 </div>
             </div>
             {changeSign === false ? (<div className="w-3/6 h-screen flex items-center justify-center">
-                <form className="bg-white w-3/5 h-4/5 rounded-lg">
-                    <section className="flex justify-around p-4 text-2xl">
-                <button className="border-b-2 border-purple-700">Login</button>
-                <button className="">Signup</button>
+                <form className="bg-white w-3/5 h-auto rounded-lg transition-all duration-700">
+                <section className="flex justify-around p-4 text-2xl">
+                 <button className={login === true && signup === false? "border-b-2 border-purple-700":"" }onClick={(e) => {
+                        e.preventDefault();
+                        setLogin(true);
+                        setSignup(false);
+                    }}>Login</button>
+                    <button className={login === false && signup === true? "border-b-2 border-purple-700":"" } onClick={(e) => {
+                        e.preventDefault();
+                        setLogin(false);
+                        setSignup(true);
+                    }}>Signup</button>
 
                     </section>
-                    <section className="flex flex-col leading-10 items-center justify-center h-4/5">
-                        <input type="text" className="border-2 border-black p-1 text-xl mt-3 w-3/4" placeholder="UserName"></input>
-                        <input type="password" className="border-2 mt-3 w-3/4 border-black p-1 text-xl" placeholder="Password"></input>
+                    {login === true && signup === false? (<>
+                        
+                        <section className="flex flex-col leading-10 items-center justify-center h-4/5">
+                        <input type="text" className="border-2 rounded-lg  border-black p-1 text-xl mt-3 w-3/4" placeholder="UserName"></input>
+                        <input type="password" className="border-2 rounded-lg  mt-3 w-3/4 border-black p-1 text-xl" placeholder="Password"></input>
                         <div className="text-center" >
                         <button className="mt-3 font-condensed font-thin border-2 border-purple-700 text-black rounded-lg  pl-6 pr-6 text-2xl transition-all duration-700 ">Login</button>
-
                 </div>
                     </section>
                     <section className="flex flex-col">
-                        <button>Signin with Google</button>
-                        <button>Signin with Github</button>
+                       <div className="text-center">
+                       <button className="m-3 w-3/6 font-condensed font-thin bg-gray-700 hover:bg-gray-900 text-white rounded-lg  pl-6 pr-6 text-2xl transition-all duration-700 ">Signin with Google</button>
+                        <button className="m-3 w-3/6  font-condensed font-thin bg-gray-700 hover:bg-gray-900 text-white rounded-lg  pl-6 pr-6 text-2xl transition-all duration-700 ">Signin with Github</button>
+                       </div>
+                    </section> 
+                    </>):(<>
+                        
+                        <section className="flex flex-col leading-10 items-center justify-center h-4/5">
+                        <input type="text" className="border-2 rounded-lg border-black p-1 text-xl mt-3 w-3/4" placeholder="FirstName"></input>
+                        <input type="email" className="border-2 rounded-lg  mt-3 w-3/4 border-black p-1 text-xl" placeholder="Email"></input>
+                        <input type="password" className="border-2 rounded-lg  mt-3 w-3/4 border-black p-1 text-xl" placeholder="Password"></input>
+                        <input type="password" className="border-2 rounded-lg  mt-3 w-3/4 border-black p-1 text-xl" placeholder="Re-type-Password"></input>
+                        <div className="text-center" >
+                        <button className="mt-3 font-condensed font-thin border-2 border-purple-700 text-black rounded-lg  pl-6 pr-6 text-2xl transition-all duration-700 ">Signup</button>
+                </div>
                     </section>
+                    <section className="flex flex-col">
+                       <div className="text-center">
+                       <button className="m-3 w-3/6 font-condensed font-thin bg-gray-700 hover:bg-gray-900 text-white rounded-lg  pl-6 pr-6 text-2xl transition-all duration-700 ">Signin with Google</button>
+                        <button className="m-3 w-3/6  font-condensed font-thin bg-gray-700 hover:bg-gray-900 text-white rounded-lg  pl-6 pr-6 text-2xl transition-all duration-700 ">Signin with Github</button>
+                       </div>
+                    </section>
+                    
+                    </>)}
+                    
+                     
+                    
                 </form>
             </div>):""}
         </div>
