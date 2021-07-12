@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 const NavBar = () => {
     return <>
-        <nav className="flex justify-between p-4 shadow-md fixed w-full">
+        <nav className="flex justify-between p-4 shadow-md fixed w-full bg-white z-10">
             <Link to="" className="text-2xl">{"</ZeroWatts>"}</Link>
             <div className="flex  justify-between">
             <ul className="flex justify-between w-2/4 text-xl items-center ">
