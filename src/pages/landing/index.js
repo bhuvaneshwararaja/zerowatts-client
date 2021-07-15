@@ -1,7 +1,8 @@
-import {Link} from "react-router-dom";
+
 import {useState} from "react";
 import { FaGithubAlt} from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc"
+import React from 'react'
 const LandingPage = () => {
     const [changeSign,setChangesign] = useState(true);
     const [login,setLogin] = useState(true);
@@ -12,7 +13,7 @@ const LandingPage = () => {
     </div>
        <div className="relative" style={{background:"rgba(0,0,0,.9"}}>
        <header className="flex flex-row justify-between p-4 text-2xl text-white">
-            <Link to="">{"</ZeroWatts>"}</Link>
+            <a href="">{"</ZeroWatts>"}</a>
             <button onClick={(e) => {
                 e.preventDefault();
                 setChangesign(false);

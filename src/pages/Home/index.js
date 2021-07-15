@@ -31,7 +31,7 @@ const Home = () => {
            <div>
                 
             <h1 className="m-4 text-3xl text-center">Learn And Practice </h1>
-            <div className="flex h-auto flex-wrap">
+            <div className="flex h-auto flex-wrap justify-center">
             {card}
             </div>
            </div>
