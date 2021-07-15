@@ -22,5 +22,5 @@ app.use(express.static(path.resolve(__dirname,'..',"build")))
 
 const PORT = 8080;
 app.listen(PORT,() => {
-    console.log("server listen 8080");
+    console.log("server listen to 8080");
 })
