@@ -5,10 +5,8 @@ import App from './App';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.hydrate(
-  <Router>
-    <App />
-  </Router>,
+ReactDOM.render(
+  <App />,
   document.getElementById('root')
 );
 

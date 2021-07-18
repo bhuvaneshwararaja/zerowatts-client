@@ -7,11 +7,16 @@ import Home from './pages/Home';
 import React from 'react'
 function App() {
   return (
-      <Switch>
+    <Router>
+       <Switch>
+         
         <Route exact path="/" component={LandingPage} />
         {/* <Route path="/" component={NavBar} /> */}
         <Route path="/home" exact component={Home} />
+        <Route path="*" component={() => "404 NOT FOUND"}></Route>
       </Switch>
+    </Router>
+     
    
   );
 }
