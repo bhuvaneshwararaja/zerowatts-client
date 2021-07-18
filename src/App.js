@@ -11,7 +11,7 @@ function App() {
        <Switch>
          
         <Route exact path="/" component={LandingPage} />
-        {/* <Route path="/" component={NavBar} /> */}
+       
         <Route path="/home" exact component={Home} />
         <Route path="*" component={() => "404 NOT FOUND"}></Route>
       </Switch>
