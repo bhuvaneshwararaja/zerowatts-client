@@ -5,4 +5,5 @@
 
 *{
     outline:none;
+    scroll-behaviour:smooth;
 }
