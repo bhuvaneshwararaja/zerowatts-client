@@ -20,8 +20,8 @@ const Assessment = () => {
     <NavBar />
     <div className="flex">
         <Editor />
-       <div className="flex flex-col w-3/6">
-       <div className="h-96 shadow-lg w-full  mt-20 overflow-y-auto overflow-x-hidden flex flex-col p-2">
+       <div className="flex flex-col w-3/6 ">
+       <div className="shadow-lg w-full  mt-20 overflow-y-auto overflow-x-hidden flex flex-col p-2">
             <h1 className="text-2xl mt-2">Problem : I/O</h1>
             <p className="text-lg">Determine if the entered word is similar to word zoo.
                 For example, words such as zzoooo and zzzoooooo are similar to word zoo but not the words such as zzooo and zzzooooo.
@@ -35,8 +35,9 @@ const Assessment = () => {
             <p className="text-lg">First line: A word that starts with several Zs and continues by several Os.<br/>
 Note: The maximum length of this word must be .</p>
         </div>
-        <div className="h-96 shadow-lg w-full mt-20 overflow-y-auto overflow-x-hidden flex flex-col p-2">
+        <div className=" shadow-lg w-full mt-20 overflow-y-auto overflow-x-hidden flex flex-col p-2">
         <AceEditor width="100%"
+            height="20vh"
             mode="c_cpp"
             theme="tomorrow"
             fontSize="20px"
@@ -45,6 +46,8 @@ Note: The maximum length of this word must be .</p>
                 readOnly:true
             }}
             value={`${`
+//Basic Input output
+
 #inclue<iostream>
 using namespace std;
 int main(){
