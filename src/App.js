@@ -13,7 +13,6 @@ function App() {
        <Switch>
          
         <Route exact path="/" component={LandingPage} />
-       
         <Route path="/home" exact component={Home} />
         <Route path="/assessment" exact component={Assessment}></Route>
         <Route path="*" component={() => "404 NOT FOUND"}></Route>
